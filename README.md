@@ -1,4 +1,4 @@
-# ChordX API Automation Framework
+# GraphQL API Automation Framework
 
 We are using the following elements in this API automation framework:
  - Rest Assured library

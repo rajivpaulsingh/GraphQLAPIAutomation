@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/singh2_rajiv/Automation/ChordX/ChordXApi-Automation">
+        <classes>
+            <class name="APITests.GetServerVersionTest">
+            </class>
+            <class name="APITests.SensorsTest">
+            </class>
+            <class name="APITests.SimulatorConfigTest">
+            </class>
+            <class name="APITests.EquipmentTest">
+            </class>
+        </classes>
+    </test>
+</suite>

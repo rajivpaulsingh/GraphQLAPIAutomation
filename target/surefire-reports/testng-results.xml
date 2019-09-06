@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-09-06T14:30:50 PDT" name="All Test Suite" finished-at="2019-09-06T14:30:53 PDT" duration-ms="3072">
+    <groups>
+    </groups>
+    <test started-at="2019-09-06T14:30:50 PDT" name="/Users/singh2_rajiv/Automation/ChordX/ChordXApi-Automation" finished-at="2019-09-06T14:30:53 PDT" duration-ms="3072">
+      <class name="APITests.SensorsTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.SensorsTest@8c3b9d]" started-at="2019-09-06T14:30:50 PDT" name="getData" finished-at="2019-09-06T14:30:50 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="sensorsTest()[pri:0, instance:APITests.SensorsTest@8c3b9d]" started-at="2019-09-06T14:30:52 PDT" name="sensorsTest" finished-at="2019-09-06T14:30:53 PDT" duration-ms="1080" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Test failed because of anomaly]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Test failed because of anomaly
+at org.testng.Assert.fail(Assert.java:97)
+at APITests.SensorsTest.sensorsTest(SensorsTest.java:75)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sensorsTest -->
+      </class> <!-- APITests.SensorsTest -->
+      <class name="APITests.GetServerVersionTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.GetServerVersionTest@5b94b04d]" started-at="2019-09-06T14:30:50 PDT" name="getData" finished-at="2019-09-06T14:30:50 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="versionTest()[pri:0, instance:APITests.GetServerVersionTest@5b94b04d]" started-at="2019-09-06T14:30:50 PDT" name="versionTest" finished-at="2019-09-06T14:30:52 PDT" duration-ms="1349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- versionTest -->
+      </class> <!-- APITests.GetServerVersionTest -->
+      <class name="APITests.SimulatorConfigTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.SimulatorConfigTest@4c39bec8]" started-at="2019-09-06T14:30:50 PDT" name="getData" finished-at="2019-09-06T14:30:50 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="configTest()[pri:0, instance:APITests.SimulatorConfigTest@4c39bec8]" started-at="2019-09-06T14:30:53 PDT" name="configTest" finished-at="2019-09-06T14:30:53 PDT" duration-ms="58" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configTest -->
+      </class> <!-- APITests.SimulatorConfigTest -->
+      <class name="APITests.EquipmentTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.EquipmentTest@f79e]" started-at="2019-09-06T14:30:50 PDT" name="getData" finished-at="2019-09-06T14:30:50 PDT" duration-ms="458" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="equipTest()[pri:0, instance:APITests.EquipmentTest@f79e]" started-at="2019-09-06T14:30:53 PDT" name="equipTest" finished-at="2019-09-06T14:30:53 PDT" duration-ms="88" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equipTest -->
+      </class> <!-- APITests.EquipmentTest -->
+    </test> <!-- /Users/singh2_rajiv/Automation/ChordX/ChordXApi-Automation -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

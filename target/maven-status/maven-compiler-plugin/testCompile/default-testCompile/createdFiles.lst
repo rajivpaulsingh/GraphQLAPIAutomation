@@ -1,0 +1,4 @@
+APITests/EquipmentTest.class
+APITests/SensorsTest.class
+APITests/SimulatorConfigTest.class
+APITests/GetServerVersionTest.class

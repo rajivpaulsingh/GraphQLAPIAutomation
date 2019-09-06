@@ -1,0 +1,12 @@
+query {
+    equipment
+    {
+        _id
+        model
+        name
+        serialNumber
+        generatorType
+        manufacturer
+        runningHours
+    }
+}

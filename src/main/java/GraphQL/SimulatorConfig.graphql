@@ -1,0 +1,21 @@
+query {
+    getSimulatorConfig {
+        sensors {
+            TT_0110 {
+                operator
+                value
+            }
+            PT_015001 {
+                operator
+                value
+            }
+        }
+        engineRpm {
+            rpm
+        }
+        cylinderPressure {
+            compression
+            maximum
+        }
+    }
+}

@@ -1,0 +1,19 @@
+query {
+    maintenanceHistory
+    {
+        cursor
+        overdueCount
+        maintenanceJobs
+        {
+            _id
+            title
+            name
+            shipName
+            manualUrl
+            description
+            scheduledDate
+            performedDate
+            completedDate
+        }
+    }
+}

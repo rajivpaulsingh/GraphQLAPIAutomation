@@ -26,4 +26,11 @@ public class Utilities {
         json.put("query", payload);
         return  json.toString();
     }
+
+    public static String graphqlWithVariablesToJsonString(String payload, String variables){
+        JSONObject json = new JSONObject();
+        json.put("query", payload);
+        json.put("variables", variables);
+        return json.toString();
+    }
 }

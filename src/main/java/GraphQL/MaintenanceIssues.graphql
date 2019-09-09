@@ -1,0 +1,21 @@
+query GetMaintenanceIssues($issuesFilter: MaintenanceIssuesFilter!) {
+    maintenanceIssues(filter: $issuesFilter) {
+        _id
+        name
+        likelihood
+        checks {
+            name
+            value
+        }
+        correctiveActions {
+            name
+        }
+    }
+}
+
+#Query Variables
+{
+"issuesFilter": {
+"equipmentId": "01DE8GT5GMXAPN5JKH8486Z7A2"
+}
+}

@@ -1,0 +1,29 @@
+query getLiveData($liveChartsFilter: LiveDataFilter!) {
+    liveData(filter: $liveChartsFilter) {
+        data {
+            sensorIdentifier
+            name
+            unitType
+            readingType
+            values
+            ... on CylinderPressureSensorLiveData {
+                compressionIndex
+                compressionPressure
+                maximumPressure
+                maximumIndex
+            }
+        }
+        chartType
+    }
+}
+
+# Query Variables
+{
+"liveChartsFilter":
+{
+"chartType": "CYLINDER_PRESSURE_LIVE"
+}
+}
+
+
+

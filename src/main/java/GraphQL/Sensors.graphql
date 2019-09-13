@@ -1,14 +1,14 @@
-query {
-    sensors {
+query sensors {
+    equipment{
         _id
-        identifier
+    }
+    sensors {
         name
-        unitType
-        reading {
-            timestamp
-            value
-            unitType
-        }
         hasAnomaly
+        identifier
+        reading {
+            unitType
+            value
+        }
     }
 }

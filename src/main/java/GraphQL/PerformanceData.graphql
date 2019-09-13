@@ -1,0 +1,23 @@
+query getPerformanceData($chartsFilter: PerformanceDataFilter!) {
+    performanceData(filter: $chartsFilter) {
+        data {
+            sensorIdentifier
+            name
+            unitType
+            readingType
+            values
+        }
+        startDate
+        endDate
+        chartType
+        scale
+    }
+}
+
+# Query Variables
+{
+"chartsFilter": {
+"chartType": "CYLINDER_PRESSURE_HISTORY",
+"scale": 0
+}
+}

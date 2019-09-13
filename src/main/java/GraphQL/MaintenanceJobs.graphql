@@ -1,0 +1,65 @@
+query GetMaintenanceJobs($equipmentId: String!){
+    plannedMaintenance(filter:{equipmentId:$equipmentId}){
+        maintenanceJobs{
+            _id,
+            title
+            name
+            status
+            manualUrl
+            scheduledDate
+            statusUpdatedDate
+            completedDate
+            findings
+            materials {
+                name
+                quantity
+            }
+            measurements {
+                preMeasurements {
+                    ...MaintenanceMeasurementFieldFragment
+                }
+                maintenance {
+                    ...MaintenanceMeasurementFieldFragment
+                }
+                postMeasurements {
+                    ...MaintenanceMeasurementFieldFragment
+                }
+                visualCheck {
+                    ...MaintenanceMeasurementFieldFragment
+                }
+                notes {
+                    ...MaintenanceMeasurementFieldFragment
+                }
+            }
+        }
+
+    }
+}
+fragment MaintenanceMeasurementFieldFragment on MaintenanceMeasurementField {
+    key
+    type
+    label
+    isRequired
+    ... on MaintenanceMeasurementCheckboxField {
+        checkboxFieldValue : value
+    }
+    ... on MaintenanceMeasurementNumberField {
+        numberFieldValue : value
+        unitType
+    }
+    ... on MaintenanceMeasurementTextField {
+        textFieldValue : value
+    }
+    ... on MaintenanceMeasurementToggleField {
+        toggleFieldValue : value
+    }
+    ... on MaintenanceMeasurementImageField {
+        imageFieldValue : value
+    }
+
+}
+
+# Query Variables
+{
+"equipmentId": "01DE8GT5GMXAPN5JKH8486Z7A2"
+}

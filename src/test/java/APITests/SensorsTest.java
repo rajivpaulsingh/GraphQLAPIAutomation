@@ -1,58 +1,35 @@
 package APITests;
 
+import Resources.APIService;
 import Resources.PayLoad;
+import Resources.Prerequisite;
 import Resources.Utilities;
-import io.restassured.RestAssured;
-import io.restassured.config.EncoderConfig;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
-
-import static io.restassured.RestAssured.baseURI;
-import static io.restassured.RestAssured.given;
 
 public class SensorsTest {
 
-    Properties prop = new Properties();
-    EncoderConfig encoderConfig = new EncoderConfig();
     private static final Logger log = LogManager.getLogger(SensorsTest.class.getName());
 
     @BeforeTest
     public void getData() throws IOException {
 
-        FileInputStream fis = new FileInputStream
-                (System.getProperty("user.dir") + "/src/main/java/Resources/env.properties");
-        prop.load(fis);
-        BasicConfigurator.configure();
-        baseURI = prop.getProperty("HOST");
+        Prerequisite.prefillData();
     }
 
     @Test
-    public void sensorsTest() throws IOException {
+    public void sensorsTest() {
 
         log.info("Sending the graphQL request to the server");
-        Response res = given().
-                header("Content-Type", "application/json").
-                config(RestAssured.config().encoderConfig(encoderConfig.appendDefaultContentCharsetToContentTypeIfUndefined(false).encodeContentTypeAs("application/graphql", ContentType.TEXT))).
-                body(PayLoad.getSensorsData()).
-
-                when().
-                post(baseURI).
-
-                then().
-                assertThat().statusCode(200).and().contentType(ContentType.JSON).
-
-                extract().response();
+        String payload = PayLoad.getSensorsData();
+        Response res = APIService.sendAPIRequest(payload);
 
         JsonPath js = Utilities.RawToJSON(res);
         log.info("The status code for sensors api is: " + res.getStatusCode());
@@ -72,7 +49,8 @@ public class SensorsTest {
         }
         Assert.assertNotNull(sensorName);
         if(totalAnomalies > 0) {
-            Assert.fail("Test failed because of anomaly");
+            log.error("There are " + totalAnomalies + " anomaly/anomalies");
+            log.error("Test failed because of anomaly/anomalies. Please check the logs.");
         }
     }
 

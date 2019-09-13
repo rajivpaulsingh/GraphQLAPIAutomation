@@ -1,0 +1,18 @@
+query getPlannedMaintenance{
+    plannedMaintenance(limit:10){
+        overdueCount
+        cursor
+        maintenanceJobs {
+            _id,
+            title
+            name
+            findings
+            manualUrl
+            status
+            scheduledDate
+            performedDate
+            completedDate
+            isOverdue
+        }
+    }
+}

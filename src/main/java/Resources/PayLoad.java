@@ -143,4 +143,160 @@ public class PayLoad {
         return payload;
     }
 
+    public static String getPerformanceData() {
+
+        String value = "query getPerformanceData($chartsFilter: PerformanceDataFilter!) {\n" +
+                " performanceData(filter: $chartsFilter) {\n" +
+                "   data {\n" +
+                "     sensorIdentifier\n" +
+                "     name\n" +
+                "     unitType\n" +
+                "     readingType\n" +
+                "     values\n" +
+                "   }\n" +
+                "   startDate\n" +
+                "   endDate\n" +
+                "   chartType\n" +
+                "   scale\n" +
+                " }\n" +
+                "}";
+
+        String variables = "{\n" +
+                "  \"chartsFilter\": {\n" +
+                "    \"chartType\": \"CYLINDER_PRESSURE_HISTORY\"\n" +
+                "  }\n" +
+                "}";
+
+        String payload = Utilities.graphqlWithVariablesToJsonString(value, variables);
+        return payload;
+    }
+
+    public static String getPlannedMaintenance() {
+
+        String value = "query getPlannedMaintenance{\n" +
+                " plannedMaintenance(limit:10){\n" +
+                "    overdueCount\n" +
+                "    cursor\n" +
+                "    maintenanceJobs {\n" +
+                "      _id,\n" +
+                "      title\n" +
+                "      name\n" +
+                "      findings\n" +
+                "      manualUrl\n" +
+                "      status\n" +
+                "      scheduledDate\n" +
+                "      performedDate\n" +
+                "      completedDate\n" +
+                "      isOverdue\n" +
+                "    }\n" +
+                "  }\n" +
+                "}";
+
+        String payload = Utilities.graphqlToJsonString(value);
+        return payload;
+    }
+
+    public static String getLiveData() {
+
+        String value = "query getLiveData($liveChartsFilter: LiveDataFilter!) {\n" +
+                " liveData(filter: $liveChartsFilter) {\n" +
+                "   data {\n" +
+                "     sensorIdentifier\n" +
+                "     name\n" +
+                "     unitType\n" +
+                "     readingType\n" +
+                "     values\n" +
+                "     ... on CylinderPressureSensorLiveData {\n" +
+                "       compressionIndex\n" +
+                "       compressionPressure\n" +
+                "       maximumPressure\n" +
+                "       maximumIndex\n" +
+                "     }\n" +
+                "   }\n" +
+                "   chartType\n" +
+                " }\n" +
+                "}";
+
+        String variables = "{\n" +
+                " \"liveChartsFilter\":\n" +
+                " {\n" +
+                "   \"chartType\": \"CYLINDER_PRESSURE_LIVE\"\n" +
+                " }\n" +
+                "}";
+
+        String payload = Utilities.graphqlWithVariablesToJsonString(value, variables);
+        return payload;
+    }
+
+    public static String getMaintenanceJob(String equipmentID) {
+
+        String value = "query GetMaintenanceJobs($equipmentId: String!){\n" +
+                "  plannedMaintenance(filter:{equipmentId:$equipmentId}){\n" +
+                "    maintenanceJobs{\n" +
+                "      _id,\n" +
+                "    title\n" +
+                "    name\n" +
+                "    status\n" +
+                "    manualUrl\n" +
+                "    scheduledDate\n" +
+                "    statusUpdatedDate\n" +
+                "    completedDate\n" +
+                "    findings\n" +
+                "    materials {\n" +
+                "      name\n" +
+                "      quantity\n" +
+                "    }\n" +
+                "     measurements {\n" +
+                "      preMeasurements {\n" +
+                "        ...MaintenanceMeasurementFieldFragment\n" +
+                "      }\n" +
+                "      maintenance {\n" +
+                "       ...MaintenanceMeasurementFieldFragment\n" +
+                "      }\n" +
+                "      postMeasurements {\n" +
+                "       ...MaintenanceMeasurementFieldFragment\n" +
+                "      }\n" +
+                "      visualCheck {\n" +
+                "        ...MaintenanceMeasurementFieldFragment\n" +
+                "      }\n" +
+                "      notes {\n" +
+                "        ...MaintenanceMeasurementFieldFragment\n" +
+                "      }\n" +
+                "    }\n" +
+                "    }\n" +
+                "    \n" +
+                "  }\n" +
+                "}\n" +
+                "fragment MaintenanceMeasurementFieldFragment on MaintenanceMeasurementField {\n" +
+                "  key\n" +
+                "  type\n" +
+                "  label\n" +
+                "  isRequired\n" +
+                "  ... on MaintenanceMeasurementCheckboxField {\n" +
+                "    checkboxFieldValue : value\n" +
+                "  }\n" +
+                "  ... on MaintenanceMeasurementNumberField {\n" +
+                "   numberFieldValue : value\n" +
+                "  unitType\n" +
+                "  }\n" +
+                "  ... on MaintenanceMeasurementTextField {\n" +
+                "   textFieldValue : value\n" +
+                "  }\n" +
+                "  ... on MaintenanceMeasurementToggleField {\n" +
+                "   toggleFieldValue : value\n" +
+                "  }\n" +
+                "  ... on MaintenanceMeasurementImageField {\n" +
+                "    imageFieldValue : value\n" +
+                "  }\n" +
+                " \n" +
+                "}";
+
+        String variables = "{\n" +
+                " \"equipmentId\": \"" + equipmentID + "\"\n" +
+                "}";
+
+        String payload = Utilities.graphqlWithVariablesToJsonString(value, variables);
+        return payload;
+    }
+
 }

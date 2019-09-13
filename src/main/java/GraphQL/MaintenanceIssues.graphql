@@ -13,7 +13,7 @@ query GetMaintenanceIssues($issuesFilter: MaintenanceIssuesFilter!) {
     }
 }
 
-#Query Variables
+# Query Variables
 {
 "issuesFilter": {
 "equipmentId": "01DE8GT5GMXAPN5JKH8486Z7A2"

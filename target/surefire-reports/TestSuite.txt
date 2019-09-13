@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.695 s <<< FAILURE! - in TestSuite
-sensorsTest(APITests.SensorsTest)  Time elapsed: 1.282 s  <<< FAILURE!
-java.lang.AssertionError: Test failed because of anomaly
-	at APITests.SensorsTest.sensorsTest(SensorsTest.java:75)
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.195 s <<< FAILURE! - in TestSuite
+sensorsTest(APITests.SensorsTest)  Time elapsed: 1.787 s  <<< FAILURE!
+java.lang.AssertionError: Test failed because of anomaly/anomalies. Please check the logs.
+	at APITests.SensorsTest.sensorsTest(SensorsTest.java:53)
 

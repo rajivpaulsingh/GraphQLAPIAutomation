@@ -50,7 +50,7 @@ public class SensorsTest {
         Assert.assertNotNull(sensorName);
         if(totalAnomalies > 0) {
             log.error("There are " + totalAnomalies + " anomaly/anomalies");
-            log.error("Test failed because of anomaly/anomalies. Please check the logs.");
+            Assert.fail("Test failed because of anomaly/anomalies. Please check the logs.");
         }
     }
 

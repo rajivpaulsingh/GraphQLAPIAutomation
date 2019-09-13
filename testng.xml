@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="/Users/singh2_rajiv/Automation/ChordX/ChordXApi-Automation">
+<suite name="ChordX API Tests">
+    <listeners>
+        <listener class-name="Resources.ExtentReportNG" />
+    </listeners>
+    <test verbose="2" preserve-order="true" name="ChordX API Automation">
         <classes>
+            <class name="APITests.EquipmentTest">
+            </class>
             <class name="APITests.GetServerVersionTest">
+            </class>
+            <class name="APITests.LiveDataTest">
+            </class>
+            <class name="APITests.MaintenanceHistoryTest">
+            </class>
+            <class name="APITests.MaintenanceIssuesTest">
+            </class>
+            <class name="APITests.MaintenanceJobTest">
+            </class>
+            <class name="APITests.PerformanceDataTest">
+            </class>
+            <class name="APITests.PlannedMaintenanceTest">
             </class>
             <class name="APITests.SensorsTest">
             </class>
             <class name="APITests.SimulatorConfigTest">
-            </class>
-            <class name="APITests.EquipmentTest">
             </class>
         </classes>
     </test>

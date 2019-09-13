@@ -1,2 +1,5 @@
 Resources/Utilities.class
+Resources/APIService.class
 Resources/PayLoad.class
+Resources/ExtentReportNG.class
+Resources/Prerequisite.class

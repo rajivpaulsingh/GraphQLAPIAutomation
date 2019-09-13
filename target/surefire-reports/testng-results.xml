@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="10" passed="9" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-09-06T14:30:50 PDT" name="All Test Suite" finished-at="2019-09-06T14:30:53 PDT" duration-ms="3072">
+  <suite started-at="2019-09-13T11:50:29 PDT" name="ChordX API Tests" finished-at="2019-09-13T11:50:35 PDT" duration-ms="5713">
     <groups>
     </groups>
-    <test started-at="2019-09-06T14:30:50 PDT" name="/Users/singh2_rajiv/Automation/ChordX/ChordXApi-Automation" finished-at="2019-09-06T14:30:53 PDT" duration-ms="3072">
-      <class name="APITests.SensorsTest">
-        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.SensorsTest@8c3b9d]" started-at="2019-09-06T14:30:50 PDT" name="getData" finished-at="2019-09-06T14:30:50 PDT" duration-ms="0" status="PASS">
+    <test started-at="2019-09-13T11:50:29 PDT" name="ChordX API Automation" finished-at="2019-09-13T11:50:35 PDT" duration-ms="5713">
+      <class name="APITests.MaintenanceJobTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.MaintenanceJobTest@6ab778a]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getData -->
-        <test-method signature="sensorsTest()[pri:0, instance:APITests.SensorsTest@8c3b9d]" started-at="2019-09-06T14:30:52 PDT" name="sensorsTest" finished-at="2019-09-06T14:30:53 PDT" duration-ms="1080" status="FAIL">
+        <test-method signature="maintenanceJobTest()[pri:0, instance:APITests.MaintenanceJobTest@6ab778a]" started-at="2019-09-13T11:50:32 PDT" name="maintenanceJobTest" finished-at="2019-09-13T11:50:32 PDT" duration-ms="470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- maintenanceJobTest -->
+      </class> <!-- APITests.MaintenanceJobTest -->
+      <class name="APITests.SensorsTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.SensorsTest@1dac5ef]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="sensorsTest()[pri:0, instance:APITests.SensorsTest@1dac5ef]" started-at="2019-09-13T11:50:34 PDT" name="sensorsTest" finished-at="2019-09-13T11:50:34 PDT" duration-ms="480" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Test failed because of anomaly]]>
+              <![CDATA[Test failed because of anomaly/anomalies. Please check the logs.]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Test failed because of anomaly
+              <![CDATA[java.lang.AssertionError: Test failed because of anomaly/anomalies. Please check the logs.
 at org.testng.Assert.fail(Assert.java:97)
-at APITests.SensorsTest.sensorsTest(SensorsTest.java:75)
+at APITests.SensorsTest.sensorsTest(SensorsTest.java:53)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,36 +69,86 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
           </reporter-output>
         </test-method> <!-- sensorsTest -->
       </class> <!-- APITests.SensorsTest -->
-      <class name="APITests.GetServerVersionTest">
-        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.GetServerVersionTest@5b94b04d]" started-at="2019-09-06T14:30:50 PDT" name="getData" finished-at="2019-09-06T14:30:50 PDT" duration-ms="0" status="PASS">
+      <class name="APITests.MaintenanceHistoryTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.MaintenanceHistoryTest@38102d01]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getData -->
-        <test-method signature="versionTest()[pri:0, instance:APITests.GetServerVersionTest@5b94b04d]" started-at="2019-09-06T14:30:50 PDT" name="versionTest" finished-at="2019-09-06T14:30:52 PDT" duration-ms="1349" status="PASS">
+        <test-method signature="maintenanceHistoryTest()[pri:0, instance:APITests.MaintenanceHistoryTest@38102d01]" started-at="2019-09-13T11:50:31 PDT" name="maintenanceHistoryTest" finished-at="2019-09-13T11:50:32 PDT" duration-ms="898" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- maintenanceHistoryTest -->
+      </class> <!-- APITests.MaintenanceHistoryTest -->
+      <class name="APITests.GetServerVersionTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.GetServerVersionTest@ed7f8b4]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="versionTest()[pri:0, instance:APITests.GetServerVersionTest@ed7f8b4]" started-at="2019-09-13T11:50:30 PDT" name="versionTest" finished-at="2019-09-13T11:50:30 PDT" duration-ms="64" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- versionTest -->
       </class> <!-- APITests.GetServerVersionTest -->
-      <class name="APITests.SimulatorConfigTest">
-        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.SimulatorConfigTest@4c39bec8]" started-at="2019-09-06T14:30:50 PDT" name="getData" finished-at="2019-09-06T14:30:50 PDT" duration-ms="0" status="PASS">
+      <class name="APITests.MaintenanceIssuesTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.MaintenanceIssuesTest@37883b97]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getData -->
-        <test-method signature="configTest()[pri:0, instance:APITests.SimulatorConfigTest@4c39bec8]" started-at="2019-09-06T14:30:53 PDT" name="configTest" finished-at="2019-09-06T14:30:53 PDT" duration-ms="58" status="PASS">
+        <test-method signature="maintenanceIssuesTest()[pri:0, instance:APITests.MaintenanceIssuesTest@37883b97]" started-at="2019-09-13T11:50:32 PDT" name="maintenanceIssuesTest" finished-at="2019-09-13T11:50:32 PDT" duration-ms="139" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- configTest -->
-      </class> <!-- APITests.SimulatorConfigTest -->
+        </test-method> <!-- maintenanceIssuesTest -->
+      </class> <!-- APITests.MaintenanceIssuesTest -->
       <class name="APITests.EquipmentTest">
-        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.EquipmentTest@f79e]" started-at="2019-09-06T14:30:50 PDT" name="getData" finished-at="2019-09-06T14:30:50 PDT" duration-ms="458" status="PASS">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.EquipmentTest@37271612]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getData -->
-        <test-method signature="equipTest()[pri:0, instance:APITests.EquipmentTest@f79e]" started-at="2019-09-06T14:30:53 PDT" name="equipTest" finished-at="2019-09-06T14:30:53 PDT" duration-ms="88" status="PASS">
+        <test-method signature="equipTest()[pri:0, instance:APITests.EquipmentTest@37271612]" started-at="2019-09-13T11:50:29 PDT" name="equipTest" finished-at="2019-09-13T11:50:30 PDT" duration-ms="1128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- equipTest -->
       </class> <!-- APITests.EquipmentTest -->
-    </test> <!-- /Users/singh2_rajiv/Automation/ChordX/ChordXApi-Automation -->
-  </suite> <!-- All Test Suite -->
+      <class name="APITests.LiveDataTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.LiveDataTest@4c309d4d]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="liveDataTest()[pri:0, instance:APITests.LiveDataTest@4c309d4d]" started-at="2019-09-13T11:50:30 PDT" name="liveDataTest" finished-at="2019-09-13T11:50:31 PDT" duration-ms="540" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- liveDataTest -->
+      </class> <!-- APITests.LiveDataTest -->
+      <class name="APITests.SimulatorConfigTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.SimulatorConfigTest@5c90e579]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="configTest()[pri:0, instance:APITests.SimulatorConfigTest@5c90e579]" started-at="2019-09-13T11:50:34 PDT" name="configTest" finished-at="2019-09-13T11:50:35 PDT" duration-ms="53" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configTest -->
+      </class> <!-- APITests.SimulatorConfigTest -->
+      <class name="APITests.PlannedMaintenanceTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.PlannedMaintenanceTest@77f80c04]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="plannedMaintenanceTest()[pri:0, instance:APITests.PlannedMaintenanceTest@77f80c04]" started-at="2019-09-13T11:50:33 PDT" name="plannedMaintenanceTest" finished-at="2019-09-13T11:50:34 PDT" duration-ms="977" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- plannedMaintenanceTest -->
+      </class> <!-- APITests.PlannedMaintenanceTest -->
+      <class name="APITests.PerformanceDataTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:APITests.PerformanceDataTest@4e3958e7]" started-at="2019-09-13T11:50:29 PDT" name="getData" finished-at="2019-09-13T11:50:29 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method signature="perfDataTest()[pri:0, instance:APITests.PerformanceDataTest@4e3958e7]" started-at="2019-09-13T11:50:32 PDT" name="perfDataTest" finished-at="2019-09-13T11:50:33 PDT" duration-ms="584" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- perfDataTest -->
+      </class> <!-- APITests.PerformanceDataTest -->
+    </test> <!-- ChordX API Automation -->
+  </suite> <!-- ChordX API Tests -->
 </testng-results>

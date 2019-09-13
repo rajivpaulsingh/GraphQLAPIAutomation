@@ -1,4 +1,10 @@
+APITests/MaintenanceJobTest.class
+APITests/MaintenanceIssuesTest.class
+APITests/LiveDataTest.class
+APITests/PerformanceDataTest.class
 APITests/EquipmentTest.class
 APITests/SensorsTest.class
 APITests/SimulatorConfigTest.class
+APITests/PlannedMaintenanceTest.class
+APITests/MaintenanceHistoryTest.class
 APITests/GetServerVersionTest.class

@@ -1,0 +1,56 @@
+mutation updateSimulationConfig($config: SimulatorConfigInput!) {
+    updateSimulator(config: $config) {
+        sensors
+        {
+            TT_0112
+            {
+                operator
+                value
+            }
+            TT_0110
+            {
+                operator
+                value
+            }
+            TT_0111
+            {
+                operator
+                value
+            }
+            TT_0115
+            {
+                operator
+                value
+            }
+            PT_015001
+            {
+                operator
+                value
+            }
+        }
+    }
+}
+
+#Query Variables
+{
+"config": {
+"sensors": {
+"TT_0112": {
+"operator": "EQUAL",
+"value": 88
+},
+"TT_0110": {
+"operator": "EQUAL",
+"value": 88
+},
+"TT_0111": {
+"operator": "EQUAL",
+"value": 88
+},
+"PT_015001": {
+"operator": "EQUAL",
+"value": 88
+}
+}
+}
+}

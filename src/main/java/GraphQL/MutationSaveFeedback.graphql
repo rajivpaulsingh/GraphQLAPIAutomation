@@ -1,0 +1,19 @@
+mutation saveFeedback ($userFeedback: UserFeedbackInput!){
+    saveFeedback (userFeedback: $userFeedback) {
+        _id
+        name
+        rank
+        createdDate
+        vesselId
+        feedback
+    }
+}
+
+#Query Variables
+{
+"userFeedback": {
+"name": "Test Feedback",
+"rank": "QA",
+"feedback": "This feedback was created by automation"
+}
+}

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="ChordX API Tests">
+<suite name="GraphQL API Tests">
     <listeners>
         <listener class-name="Resources.ExtentReportNG" />
     </listeners>
-    <test verbose="2" preserve-order="true" name="ChordX API Automation">
+    <test verbose="2" preserve-order="true" name="GraphQL API Automation">
         <classes>
             <class name="APITests.EquipmentTest">
             </class>

@@ -1,4 +1,4 @@
-package Resources;
+package PayLoad;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.path.xml.XmlPath;

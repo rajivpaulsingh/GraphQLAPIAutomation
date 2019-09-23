@@ -1,10 +1,10 @@
-package Resources;
+package PayLoad;
 
 import org.json.JSONObject;
 
 import java.io.File;
 
-public class PayLoad {
+public class PayLoadAPI {
 
     public static String getSimulatorConfig() {
 

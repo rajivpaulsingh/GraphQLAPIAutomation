@@ -1,0 +1,27 @@
+mutation resetEngineCounter ($inputRunningHours: RunningHoursInput!) {
+    resetEngineCounter (inputRunningHours: $inputRunningHours) {
+        _id
+        model
+        name
+        serialNumber
+        manufacturer
+        generatorType
+        firingOrder
+        isOnline
+        imageUrl
+
+        subEquipment
+        {
+            name
+        }
+        runningHours
+    }
+}
+
+#Query Variables
+{
+"inputRunningHours": {
+"newRunningHours": 10,
+"id": "01DE8GT5GMXAPN5JKH8486Z7A2"
+}
+}

@@ -1,36 +1,27 @@
 package APITests;
 
 import Resources.APIService;
-import Resources.PayLoad;
-import Resources.Prerequisite;
-import Resources.Utilities;
+import PayLoad.PayLoadAPI;
+import PayLoad.Utilities;
+import Tests.BaseTest;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 
-
-public class MaintenanceJobTest {
+public class MaintenanceJobTest extends BaseTest {
 
     private static final Logger log = LogManager.getLogger(MaintenanceJobTest.class.getName());
-
-    @BeforeTest
-    public void getData() throws IOException {
-
-        Prerequisite.prefillData();
-    }
 
     @Test
     public void maintenanceJobTest(){
 
         log.info("Sending the graphQL request to the server");
         //Get the equipment id for the next query
-        String payload = PayLoad.getEquipment();
+        String payload = PayLoadAPI.getEquipment();
         Response res = APIService.sendAPIRequest(payload);
 
         JsonPath js = Utilities.RawToJSON(res);
@@ -41,7 +32,7 @@ public class MaintenanceJobTest {
         }
         log.info("The equipment id is: " + equipmentID); //Use this equipment id in the maintenance job api query
 
-        String payload1 = PayLoad.getMaintenanceJob(equipmentID);
+        String payload1 = PayLoadAPI.getMaintenanceJob(equipmentID);
         Response res1 = APIService.sendAPIRequest(payload1);
 
         JsonPath js1 = Utilities.RawToJSON(res1);

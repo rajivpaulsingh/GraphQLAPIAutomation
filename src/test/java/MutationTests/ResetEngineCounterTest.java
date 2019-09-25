@@ -2,7 +2,7 @@ package MutationTests;
 
 import PayLoad.PayLoadAPI;
 import PayLoad.PayLoadMutation;
-import PayLoad.Utilities;
+import Resources.Utilities;
 import Resources.*;
 import Tests.BaseTest;
 import io.restassured.path.json.JsonPath;
@@ -34,7 +34,7 @@ public class ResetEngineCounterTest extends BaseTest {
         }
         log.info("The equipment id is: " + equipmentID); //Use this equipment id in the maintenance job api query
 
-        String payload1 = PayLoadMutation.getResetEngineCount(equipmentID);
+        String payload1 = PayLoadMutation.resetEngineCount(equipmentID);
         Response res1 = APIService.sendAPIRequest(payload1);
 
         JsonPath js1 = Utilities.RawToJSON(res1);

@@ -2,7 +2,7 @@ package MutationTests;
 
 import Resources.APIService;
 import PayLoad.PayLoadMutation;
-import PayLoad.Utilities;
+import Resources.Utilities;
 import Tests.BaseTest;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -19,7 +19,7 @@ public class UpdateSimulationConfigTest extends BaseTest {
     public void updateSimulationTest()  {
 
         log.info("Sending the graphQL request to the server");
-        String payload = PayLoadMutation.getUpdatedSimulation();
+        String payload = PayLoadMutation.updatimulationConfig();
         Response res = APIService.sendAPIRequest(payload);
 
         JsonPath js = Utilities.RawToJSON(res);

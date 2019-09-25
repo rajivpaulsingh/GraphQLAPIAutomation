@@ -2,7 +2,7 @@ package APITests;
 
 import Resources.APIService;
 import PayLoad.PayLoadAPI;
-import PayLoad.Utilities;
+import Resources.Utilities;
 import Tests.BaseTest;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

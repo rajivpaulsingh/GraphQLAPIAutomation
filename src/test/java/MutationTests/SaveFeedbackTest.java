@@ -2,7 +2,7 @@ package MutationTests;
 
 import Resources.APIService;
 import PayLoad.PayLoadMutation;
-import PayLoad.Utilities;
+import Resources.Utilities;
 import Tests.BaseTest;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -18,7 +18,7 @@ public class SaveFeedbackTest extends BaseTest {
     public void saveFeedbackTest()  {
 
         log.info("Sending the graphQL request to the server");
-        String payload = PayLoadMutation.getSaveFeedback();
+        String payload = PayLoadMutation.saveFeedback();
         Response res = APIService.sendAPIRequest(payload);
 
         JsonPath js = Utilities.RawToJSON(res);

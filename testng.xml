@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="Resources.ExtentReportNG" />
     </listeners>
-    <test verbose="2" preserve-order="true" name="GraphQL API Automation">
+    <test verbose="2" preserve-order="true" name="ChordX API Automation">
         <classes>
             <class name="APITests.EquipmentTest">
             </class>
@@ -25,6 +25,22 @@
             <class name="APITests.SensorsTest">
             </class>
             <class name="APITests.SimulatorConfigTest">
+            </class>
+            <class name="APITests.AppTest">
+            </class>
+            <class name="APITests.GetDiagnosticTrackingTest">
+            </class>
+            <class name="MutationTests.SaveFeedbackTest">
+            </class>
+            <class name="MutationTests.ResetEngineCounterTest">
+            </class>
+            <class name="MutationTests.UpdateSimulationConfigTest">
+            </class>
+            <class name="MutationTests.UpdateDiagnosticsTracking">
+            </class>
+            <class name="MutationTests.CreateCompletedMaintenanceJob">
+            </class>
+            <class name="MutationTests.CreateMaintenanceJob">
             </class>
         </classes>
     </test>

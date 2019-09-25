@@ -1,0 +1,32 @@
+mutation createCompletedMaintenanceJob ($userIssueMaintenance: MaintenanceJobUserIssueInput!){
+    createCompletedMaintenanceJob(userIssueMaintenance: $userIssueMaintenance)
+    {
+        _id
+        title
+        status
+        description
+        shipName
+        equipmentName
+        materials
+        {
+            name
+            quantity
+        }
+    }
+}
+
+# Query Variables
+{
+"userIssueMaintenance": {
+"sensorSnapshots": {
+"_id": "01DE5VTVHE9GRQZMF9M3T8QPN9",
+"identifier":"ZT-016001",
+"name":"Engine speed",
+"reading": {
+"timestamp":"2019-09-24T17:26:00.106Z",
+"value":70,
+"unitType":"RPM"
+}
+}
+}
+}

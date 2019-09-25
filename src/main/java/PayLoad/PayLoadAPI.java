@@ -1,8 +1,6 @@
 package PayLoad;
 
-import org.json.JSONObject;
-
-import java.io.File;
+import Resources.Utilities;
 
 public class PayLoadAPI {
 
@@ -88,6 +86,26 @@ public class PayLoadAPI {
         return payload;
     }
 
+    public static String getApp() {
+
+        //Change the name to staging/sandbox/demo when the server is updated
+        String value = "query {\n" +
+                "  app(packageName:\"io.magellanx.chordx.dashboard.demo\"){\n" +
+                "    _id\n" +
+                "    packageName\n" +
+                "        latestVersion {\n" +
+                "      _id\n" +
+                "      appName\n" +
+                "      appVersion\n" +
+                "      appUrl\n" +
+                "    }\n" +
+                "  }\n" +
+                "}";
+
+        String payload = Utilities.graphqlToJsonString(value);
+        return payload;
+    }
+
     public static String getMaintenanceHistory() {
 
         String value = "query {\n" +
@@ -114,7 +132,7 @@ public class PayLoadAPI {
         return payload;
     }
 
-    public static String getMaintenanceIssues() {
+    public static String getMaintenanceIssues(String equipmentID) {
 
         String value = "query {\n" +
                 "  maintenanceIssues(filter: {\n" +
@@ -135,7 +153,7 @@ public class PayLoadAPI {
 
         String variables = "{\n" +
                 " \"issuesFilter\": {\n" +
-                "  \"equipmentId\": \"01DE8GT5GMXAPN5JKH8486Z7A2\"\n" +
+                "  \"equipmentId\": \"" + equipmentID + "\"\n" +
                 " }\n" +
                 "}";
 
@@ -293,6 +311,33 @@ public class PayLoadAPI {
 
         String variables = "{\n" +
                 " \"equipmentId\": \"" + equipmentID + "\"\n" +
+                "}";
+
+        String payload = Utilities.graphqlWithVariablesToJsonString(value, variables);
+        return payload;
+    }
+
+    public static String getDiagnosticsTracking(String date) {
+
+        String value = "query GetDiagnosticTracking($dateFilter: DateRange!) {\n" +
+                "  getDiagnosticTracking (filter: $dateFilter) {\n" +
+                "    vesselId\n" +
+                "    startDate\n" +
+                "    endDate\n" +
+                "    anomalies {\n" +
+                "      deviceId\n" +
+                "      description\n" +
+                "      metric\n" +
+                "      duration\n" +
+                "      acknowledgement\n" +
+                "    }   \n" +
+                "  }\n" +
+                "}";
+
+        String variables = "{\n" +
+                "  \"dateFilter\": {\n" +
+                "    \"startDate\": \"" + date + "\"\n" +
+                "  }\n" +
                 "}";
 
         String payload = Utilities.graphqlWithVariablesToJsonString(value, variables);

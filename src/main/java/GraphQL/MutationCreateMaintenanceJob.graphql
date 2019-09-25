@@ -1,0 +1,23 @@
+mutation CreateMaintenanceJob ($maintenanceIssueId: ID!) {
+    createMaintenanceJob (maintenanceIssueId: $maintenanceIssueId) {
+        _id
+        title
+        name
+        status
+        manualUrl
+        equipmentName
+        documentNumber
+        scheduledDate
+        priority
+        shipName
+        issue {
+            id
+            isProblemFixed
+        }
+    }
+}
+
+# Query Variables
+{
+"maintenanceIssueId" : "01DG62C8G03NZABZ0AD60RJY1B"
+}

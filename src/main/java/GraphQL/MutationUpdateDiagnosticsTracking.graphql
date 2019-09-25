@@ -1,0 +1,26 @@
+mutation updateDiagnosticsTracking ($diagnosticsTracking:DiagnosticAnomaliesInput!) {
+    updateDiagnosticsTracking (diagnosticsTracking:$diagnosticsTracking){
+        _id
+        _rev
+        vesselId
+        anomalies {
+            deviceId
+            description
+            metric
+            duration
+            acknowledgement
+        }
+    }
+}
+
+#Query Variables
+
+{
+"diagnosticsTracking": {
+"deviceId": "test",
+"description": "testing",
+"metric": "MILLISECONDS",
+"duration": 50000,
+"acknowledgement": "ADDRESSED"
+}
+}

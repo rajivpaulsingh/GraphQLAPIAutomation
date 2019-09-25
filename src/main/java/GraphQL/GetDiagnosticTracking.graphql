@@ -1,0 +1,21 @@
+query GetDiagnosticTracking($dateFilter: DateRange!) {
+    getDiagnosticTracking (filter: $dateFilter) {
+        vesselId
+        startDate
+        endDate
+        anomalies {
+            deviceId
+            description
+            metric
+            duration
+            acknowledgement
+        }
+    }
+}
+
+# Query Variables
+{
+"dateFilter": {
+"startDate": "20190924"
+}
+}
